@@ -1,0 +1,97 @@
+{
+  "name": "client-api-utils",
+  "version": "0.0.1",
+  "description": "Universal, dependency-light JavaScript/TypeScript utilities for browser, Node.js, and edge runtimes.",
+  "license": "MIT",
+  "type": "module",
+  "author": "Anwar <anwarkamal1434@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/org-utils/client-api-utils.git"
+  },
+  "homepage": "https://github.com/org-utils/client-api-utils#readme",
+  "bugs": {
+    "url": "https://github.com/org-utils/client-api-utils/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.17"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./client": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js",
+      "require": "./dist/client.cjs"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js",
+      "require": "./dist/server.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "client": [
+        "./dist/client.d.ts"
+      ],
+      "server": [
+        "./dist/server.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint src tests --max-warnings 0",
+    "lint:fix": "eslint src tests --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "changesets:init": "changeset init",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish": "changeset publish",
+    "release": "npm run typecheck && npm run lint && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^1.0.0",
+    "@changesets/cli": "^3.0.0",
+    "@eslint/js": "^9.9.0",
+    "@types/node": "^20.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@vitest/coverage-v8": "^4.1.10",
+    "eslint": "^9.9.0",
+    "jsdom": "^25.0.0",
+    "prettier": "^3.3.0",
+    "tsup": "^8.2.0",
+    "typescript": "^5.5.0",
+    "vitest": "^4.1.10"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true,
+    "esbuild@0.27.2": true
+  }
+}
