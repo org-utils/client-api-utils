@@ -4,7 +4,6 @@ import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 
 export default [
-
   eslint.configs.recommended,
   {
     files: ['src/**/*.ts', 'tests/**/*.ts'],
